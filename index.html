@@ -19,119 +19,32 @@
   <main class="container">
     <section class="produtos-catalogo">
       <h2>Meus Produtos:</h2>
-      <ul class="produtos-lista">
-        <li class="lista-item">
-          <img src="/assets/img1.png" alt="Stormtrooper">
-          <h3>Stormtrooper</h3>
-          <div class="item-info">
-            <p>$ 60,00</p>
-            <img src="/assets/icon-trash.svg" alt="Ícone de deletar">
-          </div>
-        </li>
-        <li class="lista-item">
-          <img src="/assets/img2.png" alt="Game Boy Classic">
-          <h3>Game Boy Classic</h3>
-          <div class="item-info">
-            <p>$ 60,00</p>
-            <img src="/assets/icon-trash.svg" alt="Ícone de deletar">
-          </div>
-        </li>
-        <li class="lista-item">
-          <img src="/assets/img1.png" alt="Stormtrooper">
-          <h3>Stormtrooper</h3>
-          <div class="item-info">
-            <p>$ 60,00</p>
-            <img src="/assets/icon-trash.svg" alt="Ícone de deletar">
-          </div>
-        </li>
-        <li class="lista-item">
-          <img src="/assets/img2.png" alt="Game Boy Classic">
-          <h3>Game Boy Classic</h3>
-          <div class="item-info">
-            <p>$ 60,00</p>
-            <img src="/assets/icon-trash.svg" alt="Ícone de deletar">
-          </div>
-        </li>
-        <li class="lista-item">
-          <img src="/assets/img1.png" alt="Stormtrooper">
-          <h3>Stormtrooper</h3>
-          <div class="item-info">
-            <p>$ 60,00</p>
-            <img src="/assets/icon-trash.svg" alt="Ícone de deletar">
-          </div>
-        </li>
-        <li class="lista-item">
-          <img src="/assets/img2.png" alt="Game Boy Classic">
-          <h3>Game Boy Classic</h3>
-          <div class="item-info">
-            <p>$ 60,00</p>
-            <img src="/assets/icon-trash.svg" alt="Ícone de deletar">
-          </div>
-        </li>
-        <li class="lista-item">
-          <img src="/assets/img1.png" alt="Stormtrooper">
-          <h3>Stormtrooper</h3>
-          <div class="item-info">
-            <p>$ 60,00</p>
-            <img src="/assets/icon-trash.svg" alt="Ícone de deletar">
-          </div>
-        </li>
-        <li class="lista-item">
-          <img src="/assets/img2.png" alt="Game Boy Classic">
-          <h3>Game Boy Classic</h3>
-          <div class="item-info">
-            <p>$ 60,00</p>
-            <img src="/assets/icon-trash.svg" alt="Ícone de deletar">
-          </div>
-        </li>
-        <li class="lista-item">
-          <img src="/assets/img1.png" alt="Stormtrooper">
-          <h3>Stormtrooper</h3>
-          <div class="item-info">
-            <p>$ 60,00</p>
-            <img src="/assets/icon-trash.svg" alt="Ícone de deletar">
-          </div>
-        </li>
-        <li class="lista-item">
-          <img src="/assets/img1.png" alt="Stormtrooper">
-          <h3>Stormtrooper</h3>
-          <div class="item-info">
-            <p>$ 60,00</p>
-            <img src="/assets/icon-trash.svg" alt="Ícone de deletar">
-          </div>
-        </li>
-        <li class="lista-item">
-          <img src="/assets/img2.png" alt="Game Boy Classic">
-          <h3>Game Boy Classic</h3>
-          <div class="item-info">
-            <p>$ 60,00</p>
-            <img src="/assets/icon-trash.svg" alt="Ícone de deletar">
-          </div>
-        </li>
-        <li class="lista-item">
-          <img src="/assets/img1.png" alt="Stormtrooper">
-          <h3>Stormtrooper</h3>
-          <div class="item-info">
-            <p>$ 60,00</p>
-            <img src="/assets/icon-trash.svg" alt="Ícone de deletar">
-          </div>
-        </li>
+      <ul class="produtos-lista" data-lista>
+        <h3 class="lista-vazia-msg" data-mensagem="lista-vazia">Lista de produtos vazia. Adicione algo :)</h3>
       </ul>
     </section>
+
     <section class="adicionar-produtos">
       <h2>Adicionar<br>Produto:</h2>
-      <form action="" class="form-produtos">
-        <label for="nome"></label>
-        <input type="text" name="nome" id="nome" placeholder="nome...">
-        <label for="valor"></label>
-        <input type="text" name="valor" id="valor" placeholder="valor...">
-        <label for="imagem"></label>
-        <input type="text" name="imagem" id="imagem" placeholder="imagem...">
+      <form action="" class="form-produtos" data-formulario>
+        <div class="form-campo">
+          <label for="nome"></label>
+          <input type="text" name="nome" id="nome" data-nome placeholder="nome...">
+        </div>
+        <div class="form-campo">
+          <label for="preco"></label>
+          <input type="text" name="preco" id="preco" data-preco placeholder="valor...">
+        </div>
+        <div class="form-campo">
+          <label for="imagem"></label>
+          <input type="text" name="imagem" id="imagem" data-imagem placeholder="imagem...">
+        </div>
+        <div class="form-btn">
+          <input type="submit" name="enviar" id="enviar" value="Enviar">
+          <input type="reset" name="limpar" id="limpar" value="Limpar">
+        </div>
       </form>
-      <div class="form-btn">
-        <button>Adicionar</button>
-        <button>Limpar</button>
-      </div>
+      <p class="falta-elementos-msg" data-mensagem="erro-form">Preencha todos os campos para adicionar um produto</p>
     </section>
   </main>
 
@@ -142,5 +55,10 @@
     </div>
     <p>Desenvolvido por Gabriel Augusto</p>
   </footer>
+
+  <script src="/js/conexao.js" type="module"></script>
+  <script src="/js/construirProduto.js" type="module"></script>
+  <script src="/js/mostrarProduto.js" type="module"></script>
+  <script src="/js/excluirProduto.js" type="module"></script>
 </body>
 </html>

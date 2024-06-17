@@ -11,6 +11,13 @@
   --g2: #e5e5e5;
 }
 
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 @keyframes show-left {
   from {
     opacity: 0;

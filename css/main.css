@@ -15,7 +15,7 @@
 }
 
 .produtos-catalogo {
-  max-width: 664px;
+  max-width: 700px;
 }
 
 .produtos-catalogo h2,
@@ -28,7 +28,7 @@
 }
 
 .produtos-lista {
-  height: 70vh;
+  max-height: 70vh;
   display: flex;
   flex-wrap: wrap;
   gap: 80px 10px;
@@ -50,15 +50,33 @@
   border-radius: 10px;
 }
 
+.produtos-lista .lista-vazia-msg {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 1.25rem;
+  text-align: center;
+  place-self: center;
+  text-transform: uppercase;
+  color: var(--b);
+}
+
 .produtos-lista .lista-item {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 10px;
+  width: 170px;
+  height: 250px;
   padding: 10px;
   background: var(--c2);
   border: 3px solid var(--b);
   box-shadow: -5px 6px 3px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+}
+
+.produtos-lista .lista-item > img {
+  max-height: 170px;
+  border: 2px solid var(--b);
+  border-radius: 4px;
 }
 
 .produtos-lista .lista-item:hover {
@@ -84,6 +102,12 @@
   align-items: center;
 }
 
+.produtos-lista .lista-item .item-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .produtos-lista .lista-item .item-info > img {
   cursor: pointer;
 }
@@ -92,9 +116,15 @@
   transform: scale(1.2);
 }
 
+.adicionar-produtos {
+  flex: 1;
+  min-width: 400px; 
+}
+
 .form-produtos {
   display: flex;
   flex-direction: column;
+  gap: 40px;
   animation: show-left .3s ease-in;
 }
 
@@ -123,9 +153,8 @@
   color: var(--c1);
 }
 
-.form-produtos input#nome,
-.form-produtos input#valor {
-  margin-bottom: 40px;
+.form-campo input {
+  width: 100%;
 }
 
 .form-btn {
@@ -134,7 +163,7 @@
   animation: show-left .3s ease-in;
 }
 
-.form-btn button {
+.form-btn input {
   flex: 1;
   padding: 12px 30px;
   font-family: 'IBM Plex Mono', monospace;
@@ -146,18 +175,18 @@
   cursor: pointer;
 }
 
-.form-btn button:first-child {
+.form-btn input:first-child {
   background: var(--c1);
   color: var(--w);
 }
 
-.form-btn button:first-child:hover {
+.form-btn input:first-child:hover {
   background: var(--g2);
   color: var(--c1);
   border-color: var(--g2);
 }
 
-.form-btn button:last-child {
+.form-btn input:last-child {
   background: var(--w);
   color: var(--c1);
 }
@@ -168,9 +197,15 @@
   border-color: var(--g2);
 }
 
-.adicionar-produtos {
-  max-width: 480px;
-  flex: 2;
+.falta-elementos-msg {
+  display: none;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .825rem;
+  color: var(--c1);
+}
+
+.falta-elementos-msg.ativo {
+  display: block;
 }
 
 @media(max-width: 1062px) {
@@ -187,24 +222,29 @@
 
 @media(max-width: 577px) {
   .produtos-catalogo {
-    max-width: 100%;
+    max-width: 100vw;
   }
   .produtos-catalogo {
     padding: 0;
     box-sizing: border-box;
   }
   .adicionar-produtos {
+    box-sizing: border-box;
+    min-width: 100%;
     padding: 15px;
   }
   .produtos-lista {
     height: 100%;
-    flex-wrap: initial;
+    flex-wrap: nowrap;
     overflow-x: scroll;
     overflow: auto;
     justify-content: start;
     box-shadow: none;
     padding-left: 10px;
     padding-right: 10px;
+  }
+  .form-btn input {
+    padding: 12px 24px;
   }
 }
 
