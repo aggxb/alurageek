@@ -10,8 +10,8 @@ Nesse projeto, desenvolvi uma página de cadastro de produtos Geek, onde o usuá
 - JavaScript
 
 ### Referências do projeto
-[Repositório no GitHub](https://github.com/aggxb/alurageek)
-[Projeto](https://aggxb-alurageek.vercel.app/)
+- [Repositório no GitHub](https://github.com/aggxb/alurageek)
+- [Projeto](https://aggxb-alurageek.vercel.app/)
 
 ### Imagens do projeto
 ![lista-vazia-desktop](https://github.com/aggxb/alurageek/assets/138067428/b3408b52-7c5e-4c94-89de-12c4150627f5)
