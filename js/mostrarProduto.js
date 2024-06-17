@@ -13,6 +13,7 @@ async function mostrarProduto(evento) {
   if (nome && preco && (imagem.includes('.png') || imagem.includes('.jpg'))) {
     await conexao.criarProduto(nome, preco, imagem);
     msgErroForm.classList.remove('ativo');
+    window.location.reload();
   } else {
     msgErroForm.classList.add('ativo');
   }
@@ -24,8 +25,6 @@ async function mostrarProduto(evento) {
     msgErroForm.innerText = 'Preencha todos os campos para adicionar um produto';
     imagemItem.style.borderColor = 'var(--c1)';
   }
-
-  window.location.reload();
 }
 
 formulario.addEventListener('submit', (evento) => {
